@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="dashboard">
+    <h2>Welcome, {{ username }}</h2>
+    <p><b>Login Time:</b> {{ login_time }}</p>
+    <p><b>Logout Time:</b> Will be saved when you logout</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+</body>
+</html>

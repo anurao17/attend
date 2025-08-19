@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="dashboard">
+    <h2>Admin Dashboard</h2>
+    <table border="1" cellpadding="8" cellspacing="0" style="margin:auto;">
+        <tr>
+            <th>Username</th>
+            <th>Login Time</th>
+            <th>Logout Time</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row['Username'] }}</td>
+            <td>{{ row['Login Time'] }}</td>
+            <td>{{ row['Logout Time'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('download_csv') }}">Download CSV</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+</body>
+</html>
